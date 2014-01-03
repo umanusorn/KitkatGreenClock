@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         package="app.umitems.greenclock"
-        android:versionCode="303" android:versionName="1.0.1">
+        android:versionCode="304" android:versionName="1.0.1">
 
     <original-package android:name="com.android.alarmclock" />
     <original-package android:name="com.android.deskclock" />
@@ -14,6 +14,7 @@
     <uses-permission android:name="android.permission.DEVICE_POWER" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="19" ></uses-sdk>
+
 
     <application android:label="@string/app_label"
                  android:icon="@mipmap/ic_launcher_alarmclock"
