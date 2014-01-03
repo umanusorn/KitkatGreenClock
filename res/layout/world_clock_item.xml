@@ -44,7 +44,7 @@
                 android:baselineAligned="true"
                 android:layout_gravity="center"
                 android:gravity="center" />
-            <com.android.deskclock.AnalogClock
+            <app.umitems.greenclock.AnalogClock
                 android:id="@+id/analog_clock"
                 android:gravity="center"
                 android:layout_width="@dimen/world_clock_analog_size"
@@ -55,7 +55,7 @@
                 android:hand_minute="@drawable/clock_analog_minute_mipmap"
                 android:layout_marginBottom="@dimen/bottom_text_spacing_analog_small"/>
         </FrameLayout>
-        <com.android.deskclock.widget.EllipsizeLayout
+        <app.umitems.greenclock.widget.EllipsizeLayout
             android:id="@+id/city_name_layout"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
@@ -65,7 +65,7 @@
             android:gravity="center"
             >
             <include layout="@layout/world_clock_label"/>
-        </com.android.deskclock.widget.EllipsizeLayout>
+        </app.umitems.greenclock.widget.EllipsizeLayout>
 
         <View
             android:id="@+id/separator"

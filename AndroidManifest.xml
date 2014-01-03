@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-        package="com.android.deskclock"
-        android:versionCode="301" android:versionName="3.0.0">
+        package="app.umitems.greenclock"
+        android:versionCode="303" android:versionName="1.0.1">
 
     <original-package android:name="com.android.alarmclock" />
     <original-package android:name="com.android.deskclock" />
@@ -13,7 +13,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.DEVICE_POWER" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-sdk android:minSdkVersion="17" android:targetSdkVersion="17" ></uses-sdk>
+    <uses-sdk android:minSdkVersion="10" android:targetSdkVersion="19" ></uses-sdk>
 
     <application android:label="@string/app_label"
                  android:icon="@mipmap/ic_launcher_alarmclock"
@@ -21,10 +21,10 @@
                  android:supportsRtl="true">
 
         <provider android:name=".provider.ClockProvider"
-                android:authorities="com.android.deskclock"
+                android:authorities="com.android.healthclock"
                 android:exported="false" />
 
-        <activity android:name="DeskClock"
+        <activity android:name=".DeskClock"
                 android:label="@string/app_label"
                 android:theme="@style/DeskClock"
                 android:icon="@mipmap/ic_launcher_alarmclock"
@@ -39,7 +39,7 @@
         </activity>
 
         <activity-alias android:name="DockClock"
-                android:targetActivity="DeskClock"
+                android:targetActivity=".DeskClock"
                 android:label="@string/app_label"
                 android:theme="@style/DeskClock"
                 android:icon="@mipmap/ic_launcher_alarmclock"
@@ -53,7 +53,7 @@
             </intent-filter>
         </activity-alias>
 
-        <activity android:name="SettingsActivity"
+        <activity android:name=".SettingsActivity"
                 android:label="@string/settings"
                 android:theme="@style/SettingsTheme"
                 android:taskAffinity=""
@@ -83,7 +83,7 @@
                 android:showOnLockScreen="true"
                 android:configChanges="orientation|screenSize|keyboardHidden|keyboard|navigation"/>
 
-        <activity android:name="ScreensaverActivity"
+        <activity android:name=".ScreensaverActivity"
                 android:excludeFromRecents="true"
                 android:taskAffinity=""
                 android:theme="@style/ScreensaverActivityTheme"
@@ -97,7 +97,7 @@
                  android:exported="false">
         </service>
 
-        <activity android:name="HandleApiCalls"
+        <activity android:name=".HandleApiCalls"
                 android:theme="@android:style/Theme.NoDisplay"
                 android:excludeFromRecents="true"
                 android:permission="com.android.alarm.permission.SET_ALARM">
@@ -121,7 +121,7 @@
         </activity-alias>
 
 
-        <receiver android:name="AlarmInitReceiver">
+        <receiver android:name=".AlarmInitReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <action android:name="android.intent.action.TIME_SET" />
@@ -130,7 +130,7 @@
             </intent-filter>
         </receiver>
 
-        <receiver android:name="com.android.alarmclock.AnalogAppWidgetProvider" android:label="@string/analog_gadget"
+        <receiver android:name="app.umitems.alarmclock.AnalogAppWidgetProvider" android:label="@string/analog_gadget"
            android:icon="@mipmap/ic_launcher_alarmclock">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -139,7 +139,7 @@
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/analog_appwidget" />
         </receiver>
 
-        <receiver android:name="com.android.alarmclock.DigitalAppWidgetProvider" android:label="@string/digital_gadget"
+        <receiver android:name="app.umitems.alarmclock.DigitalAppWidgetProvider" android:label="@string/digital_gadget"
            android:icon="@mipmap/ic_launcher_alarmclock">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -155,15 +155,15 @@
             <meta-data android:name="android.appwidget.provider" android:resource="@xml/digital_appwidget" />
         </receiver>
 
-        <service android:name="com.android.alarmclock.DigitalAppWidgetService"
+        <service android:name="app.umitems.alarmclock.DigitalAppWidgetService"
              android:permission="android.permission.BIND_REMOTEVIEWS"
              android:exported="false" />
 
-        <receiver android:name="com.android.alarmclock.DigitalWidgetViewsFactory"
+        <receiver android:name="app.umitems.alarmclock.DigitalWidgetViewsFactory"
              android:exported="false" />
 
         <!-- Dream (screensaver) implementation -->
-        <service android:name="Screensaver"
+        <service android:name=".Screensaver"
             android:exported="true"
             android:label="@string/app_label">
             <intent-filter>
@@ -191,7 +191,7 @@
         <!-- This activity is basically like the TimerFragment in DeskClock
          but only during lock screen
          so that is only has the fired timers -->
-        <activity android:name="com.android.deskclock.timer.TimerAlertFullScreen"
+        <activity android:name=".timer.TimerAlertFullScreen"
                 android:excludeFromRecents="true"
                 android:theme="@style/AlarmAlertFullScreenTheme"
                 android:launchMode="singleInstance"
@@ -199,7 +199,7 @@
                 android:taskAffinity=""
                 android:configChanges="orientation|screenSize|keyboardHidden|keyboard|navigation"/>
 
-        <service android:name="TimerRingService"
+        <service android:name=".TimerRingService"
                 android:exported="false"
                 android:description="@string/timer_ring_service_desc">
             <intent-filter>
@@ -207,7 +207,7 @@
             </intent-filter>
         </service>
 
-        <receiver android:name="com.android.deskclock.timer.TimerReceiver"
+        <receiver android:name=".timer.TimerReceiver"
                 android:exported="false">
             <intent-filter>
                 <action android:name="start_timer" />
@@ -226,7 +226,7 @@
             </intent-filter>
         </receiver>
 
-        <service android:name="com.android.deskclock.stopwatch.StopwatchService"
+        <service android:name=".stopwatch.StopwatchService"
                 android:exported="false"
                 android:description="@string/stopwatch_service_desc">
             <intent-filter>

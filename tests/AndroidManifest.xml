@@ -30,8 +30,8 @@
         </activity>
     </application>
 
-    <instrumentation android:name="com.android.deskclock.DeskClockLaunchPerformance"
-        android:targetPackage="com.android.deskclock"
+    <instrumentation android:name="com.android.healthclock.DeskClockLaunchPerformance"
+        android:targetPackage="com.android.healthclock"
         android:label="DeskClock Launch Performance">
     </instrumentation>
 

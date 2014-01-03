@@ -15,7 +15,7 @@
 -->
 
 <!-- timer item in the list of active timers -->
-<com.android.deskclock.CircleButtonsLayout
+<app.umitems.greenclock.CircleButtonsLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/timer_circle"
         android:layout_width="match_parent"
@@ -25,12 +25,12 @@
         android:layout_marginRight="@dimen/timer_circle_margin"
         android:layout_marginEnd="@dimen/timer_circle_margin">
 
-    <com.android.deskclock.CircleTimerView
+    <app.umitems.greenclock.CircleTimerView
             android:id="@+id/timer_time"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
-    <com.android.deskclock.timer.CountingTimerView
+    <app.umitems.greenclock.timer.CountingTimerView
             android:id="@+id/timer_time_text"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
@@ -109,5 +109,5 @@
             android:contentDescription="@string/timer_delete"
             style="@style/button"
             android:layout_height="56dip"/>
-</com.android.deskclock.CircleButtonsLayout>
+</app.umitems.greenclock.CircleButtonsLayout>
 

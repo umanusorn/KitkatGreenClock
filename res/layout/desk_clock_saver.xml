@@ -51,7 +51,7 @@
             android:textSize="@dimen/digital_screensaver_clock_text_size"
             android:textColor="@color/clock_white" />
 
-        <com.android.deskclock.AnalogClock
+        <app.umitems.greenclock.AnalogClock
             android:id="@+id/analog_clock"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

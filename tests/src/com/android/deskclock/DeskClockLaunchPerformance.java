@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.deskclock;
+package com.android.healthclock;
 
 import android.app.Activity;
 import android.test.LaunchPerformanceBase;
@@ -29,7 +29,7 @@ public class DeskClockLaunchPerformance extends LaunchPerformanceBase {
     public void onCreate(Bundle arguments) {
         super.onCreate(arguments);
 
-        mIntent.setClassName(getTargetContext(), "com.android.deskclock.DeskClock");
+        mIntent.setClassName(getTargetContext(), "DeskClock");
         start();
     }
 
